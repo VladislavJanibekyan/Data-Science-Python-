@@ -28,7 +28,7 @@ while x <= 30:
     my_list.append(x**2)
     x += 1
 
-print(my_list[4:])
+print(my_list[5:])
 
 # Task 4
 # Write a Python program to remove duplicates from a list
