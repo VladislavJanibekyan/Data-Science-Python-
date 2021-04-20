@@ -47,23 +47,38 @@ print(euler_(231))
 # For n = 239017, the output should be
 # isLucky(n) = false.
 
+# def isLucky(n):
+#     half = int(len(str(n)) / 2)
+#     first_half = str(n)[:half]
+#     second_half = str(n)[half:]
+#     first_half_result =0
+#     second_half_result = 0
+#     for i,j in first_half, second_half:
+#         first_half_result += int(i)
+#         second_half_result += int(i)
+#     # for i in second_half:
+#     #     second_half_result += int(i)
+#     if first_half_result == second_half_result:
+#         return True
+#     else:
+#         return False
+
 def isLucky(n):
-    half = int(len(str(n)) / 2)
-    first_half = str(n)[:half]
-    second_half = str(n)[half:]
-    first_half_result =0
-    second_half_result = 0
-    for i in first_half:
-        first_half_result += int(i)
-    for i in second_half:
-        second_half_result += int(i)
+    first_half_result= 0
+    second_half_result=0
+    change_type = list(str(n))
+    print(change_type)
+    for i in range(len(change_type)):
+        if i < (len(change_type) / 2):
+            first_half_result += int(change_type[i])
+        else:
+            second_half_result += int(change_type[i])
     if first_half_result == second_half_result:
         return True
     else:
         return False
 
-
-print(isLucky(239017))
+print(isLucky(2345))
 
 # Task 3
 # The robot is standing on a rectangular grid and is currently located at the point (X0, Y0). The coordinates are integers. 
@@ -71,20 +86,25 @@ print(isLucky(239017))
 # Upon receiving a correct command, the robot moves one unit in the given direction. If the robot receives an incorrect command,
 # it simply ignores it. Where will the robot be located after following all the commands?
 
-def robot(n):
-    x = 0
-    y = 0
+def robot(n,starting_x,starting_y):
+    x = starting_x
+    y= starting_y
+    
     for i in range(0,len(n),4):
-        y += n[i]
+        y += int(n[i])
     for i in range(1,len(n),4):
-        y -= n[i]
+        y -= int(n[i])
     for i in range(2,len(n),4):
-        x -= n[i]
+        x -= int(n[i])
     for i in range(3,len(n),4):
-        x += n[i]
+        x += int(n[i])
     return x, y
-
-print(robot([45,34,67,34,23,65,78]))
+x = int(input("please specify what is x"))
+y = int(input("please specify what is y"))
+commands = input("please give commands separating with commas ")
+type_change = commands.split(",")
+print(type_change)
+print(robot(type_change,x,y))
 
 # Task 4
 
