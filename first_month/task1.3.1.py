@@ -7,7 +7,7 @@ def divider(a,b):
 	else:
 		return print('result:',False)
 
-divider(12,4)
+# divider(12,4)
 
 # Task 2
 # Write a Python function, which gets a number, and return True if that number is palindrome, 
@@ -19,7 +19,7 @@ def palindrome(a):
 	else:
 		return print(f"number is palindrome because {a} != {str(a)[::-1]}")
 
-palindrome(565)
+# palindrome(565)
 
 # Task 3
 # Write a Python function, which gets a number, and return True if that number is prime,
@@ -27,8 +27,8 @@ palindrome(565)
 
 def prime(a):
 	c = bool
-	for i in range(2,a-1):
-		if a % i == 0:
+	for i in range(2,a+1):
+		if a % i == 0 and a != i:
 			c = False
 			break
 		else:
@@ -40,7 +40,7 @@ def prime(a):
 	else:
 		return print("this number is not prime")
 
-prime(297)
+prime(3)
 
 # Task 4
 # Write a Python function, which checks if a number is perfect - that is equal to the sum of its proper positive divisors.
@@ -56,30 +56,19 @@ def perfect(a):
 		return print("this number is not perfect")
 
 
-perfect(8128)
+# perfect(8128)
 
 # Tasl 5
 # Write a function, which gets 2 numbers, and return their Great common divisor - 
 
 def gcd(a,b):
-	factor_a = []
-	factor_b = []
-	common = 0
-	for i in range(1,a+1):
-		if a % i == 0:
-			factor_a.append(i)
-	for i in range(1, b+1):
-		if b % i == 0:
-			factor_b.append(i)
+	factor_a = 0
+	for i in range(1,b+1):
+		if a % i == 0 and b % i ==0:
+			factor_a = i
+	return factor_a
 
-	for i in factor_a:
-		for j in factor_b:
-			if i == j:
-				common = i
-				break
-	return print("the gcd is", common)
-
-gcd(3379734,83262)	
+print(gcd(4,6))	
 
 
 
