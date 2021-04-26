@@ -6,12 +6,12 @@ class Money:
     def print_obj(self):
         return print(str(self.amount_init) + self.currency_initialization)
     def sum_mon(self,second_obj):
-        self.amount_init = self.amount_init + second_obj.amount_init 
-        return self
+        result = self.amount_init + second_obj.amount_init 
+        return Money(result,self.currency_initialization)
 
     def sub_mon(self,second_obj):
-        self.amount_init = abs(self.amount_init - second_obj.amount_init)
-        return self
+        result = abs(self.amount_init - second_obj.amount_init)
+        return Money(result,self.currency_initialization)
 
 def main():
     obj_1 = Money(25, "USD")
