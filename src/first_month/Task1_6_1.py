@@ -28,8 +28,8 @@ import task1_3_1
 class Rational:
 	def __init__(self,numenator,denumenator):
 		
-		self.numenator = int(numenator)
-		self.denumenator = int(denumenator)
+		self.numenator = numenator
+		self.denumenator = denumenator
 	@classmethod
 	def simp(cls, numenator,denumenator):
 		num_simp = task1_3_1.gcd(numenator, denumenator)
@@ -103,7 +103,7 @@ class Rational:
 obj = Rational.simp(6,8)
 obj_1 = Rational.simp(2,3)
 
-print(obj ** obj_1)
+print(obj + obj_1)
 
 
 
