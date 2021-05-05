@@ -16,8 +16,8 @@ class Student(Person):
         self.__course = course
         self.__middle_score = middle_score
     def __repr__(self):
-        super().__repr__()
-        return f"{self.__university}-{self.__faculty}-{self.__course}-{self.__middle_score}"
+        rep_per = super().__repr__()
+        return f"{rep_per} {self.__university}-{self.__faculty}-{self.__course}-{self.__middle_score}"
 
     def get_score(self):
         return self.__middle_score
@@ -62,8 +62,8 @@ class Teacher(Person):
         self.__experience = experience
         self.__salary = salary
     def __repr__(self):
-        super().__repr__()
-        return f"{self.__university}-{self.__faculty}-{self.__discipline}-{self.__experience}-{self.__salary}"
+        rep_per = super().__repr__()
+        return f"{rep_per} {self.__university}-{self.__faculty}-{self.__discipline}-{self.__experience}-{self.__salary}"
 
     def get_university(self):
         return self.__university
@@ -106,7 +106,7 @@ class Teacher(Person):
     salary = property(get_salary,set_salary,del_salary,doc="esim")
 
 a = Teacher("vahag","hovakimyan",34,"male","usi","politic","plsi",4,34000)
-a = Student("karen","davtyan",26,"male","ysu","pol",3,4)
+# a = Student("karen","davtyan",26,"male","ysu","pol",3,4)
 
 print(a, a.university)
 
