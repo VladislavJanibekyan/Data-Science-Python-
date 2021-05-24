@@ -27,13 +27,22 @@ import task1_3_1
 
 class Rational:
 	def __init__(self,numenator,denumenator):
-		
+		numenator,denumenator = self.simp(numenator,denumenator)
 		self.numenator = numenator
 		self.denumenator = denumenator
-	@classmethod
-	def simp(cls, numenator,denumenator):
+		try:
+			self.numenator +=1 
+			self.denumenator +=1
+		except:
+			print("the enteries are not valid")
+		if self.denumenator == 0:
+			print("the denumenator can not be 0")
+	@staticmethod
+	def simp(numenator,denumenator):
 		num_simp = task1_3_1.gcd(numenator, denumenator)
-		return cls(numenator/num_simp,denumenator/num_simp)
+		x = numenator / num_simp
+		y  = denumenator / num_simp
+		return x,y
 	
 	def __repr__(self):
 		return str(self.numenator) +"  " + str(self.denumenator)
@@ -103,7 +112,7 @@ class Rational:
 obj = Rational.simp(6,8)
 obj_1 = Rational.simp(2,3)
 
-print(obj + obj_1)
+print(obj)
 
 
 
